@@ -1,0 +1,31 @@
+#include <stdio.h>
+int x = -1;
+
+int fibonacci(int n) {
+  x++ ;
+  
+  if(n == 0){
+    return 0;
+  }
+  else if(n == 1){
+    return 1;
+  }
+  else{
+  return fibonacci(n-1) + fibonacci(n-2);
+  }
+}
+
+int main() {
+  int n, z;
+  
+  scanf("%d", &z);
+  
+  for(int i=0; i<z; i++){
+      scanf("%d", &n);
+        printf("fib(%d) = %d calls = %d\n", n, x, fibonacci (n));
+        x=-1;
+  }
+  
+
+  return(0);
+}

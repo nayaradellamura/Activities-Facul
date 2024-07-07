@@ -1,0 +1,45 @@
+#include <stdio.h>
+#define TAM_HASH 97
+#define QDEALUNOS 75
+
+// Função
+int hashFunction(int ra){
+    int hashcode;
+    
+    hashcode = ra % TAM_HASH;
+    
+    return hashcode;
+}
+
+// Código Principal
+int main()
+{
+    int ra, i, hashCode;
+    int hashTable[TAM_HASH];
+    
+    // Iniciar toda a tabela de espalhamento como vazia
+    for(i=0; i<TAM_HASH; i++)
+        hashTable[i] = 0; // indica posição não ocupada
+    
+    
+    // Loop para processar cada um dos alunos do arquivo
+    for(i=0; i<QDEALUNOS; i++){
+        scanf("%d", &ra); // Leitura de um ra
+        
+        hashCode = hashFunction(ra); // chamada da função que gera o hash hashCode
+        
+        // Testar se não ocorreu colisão
+        if(hashTable[hashCode] == 0) // posição livre
+            hashTable[hashCode] = ra;
+        else
+        	printf("Ocorreu colisao no ra %d\n",ra);
+    }
+    
+    // Exibir os RAs que ficaram armazenados
+    for(i=0; i<TAM_HASH; i++)
+        if(hashTable[i] > 0)
+            printf("RA:%d gerou hashcode %d\n", hashTable[i], i);
+        
+        
+    return 0;
+}

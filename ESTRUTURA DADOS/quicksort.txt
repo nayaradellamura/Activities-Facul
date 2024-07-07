@@ -1,0 +1,73 @@
+#include <stdio.h>
+
+/* -------------------------------------------------------------------- */
+void quickSort(int *v, int esq, int dir) {
+
+    int pivo;
+    int aux;
+    int i, j;
+
+    i = esq;
+    j = dir;
+    pivo = v[(esq + dir) / 2];
+                     
+    while (i <= j) {
+        
+        while ((v[i] < pivo) && (i < dir))
+            i++;
+
+        while ((v[j] > pivo) && (j > esq))
+            j--;
+
+        if (i <= j) {
+            aux = v[i];
+            v[i] = v[j];
+            v[j] = aux;
+            i++;
+            j--;
+        }
+
+    } /* fim do while (i < j) */
+
+    if (j > esq)
+        quickSort(v, esq, j);
+                                
+    if (i < dir)
+        quickSort(v, i, dir);
+
+} /* fim da funcao quickSort */
+
+
+/* -------------------------------------------------------------------- */
+void imprimeVetor (int *v, int n) {
+
+    int i;
+
+    for (i = 0; i < n; i++)
+        printf("%d ", v[i]);
+
+    printf("\n");
+
+} /* fim da funcao imprimeVetor */
+
+
+/* -------------------------------------------------------------------- */
+int main () {
+
+    int v[10] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+
+    int indiceInicial = 0;
+    int indiceFinal = 9;
+
+    printf("VETOR ORIGINAL: ");
+    imprimeVetor(v, 10);
+    
+    quickSort(v, indiceInicial, indiceFinal);
+
+    printf("VETOR ORDENADO: ");
+    imprimeVetor(v, 10);
+
+    return 0;
+
+} /* fim da funcao main */
+

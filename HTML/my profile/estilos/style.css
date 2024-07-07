@@ -1,0 +1,80 @@
+.texto {    
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+.topicos {
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+}
+
+#titulo {
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: 45px;
+    text-align: center;
+}
+
+.subtitulo {
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    text-align: center;
+}
+
+#div-principal {
+    width: 80%;
+    margin: auto;
+    border-radius: 5%;
+    background-color: rgb(247, 209, 242);
+}
+
+#div-4divisoes {
+    display: grid;
+    grid-template-columns: 10% 40% 40% 10%;
+}
+
+.divisao {
+    text-align: center;
+}
+
+#foto-perfil {
+    width: 60%; 
+    border-radius: 60%;
+    text-align: right;
+}
+#foto-perfil:hover {
+    transform: scale(1.1);
+}
+
+.rede-social {
+    width: 8%; 
+    border-radius: 90%;
+}
+
+#div-1divisao {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    text-align: center;
+}
+.social-links {
+    margin-top: 20px;
+}
+
+.social-link {
+    margin-right: 10px;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+
+.social-link img {
+    width: 100%;
+    height: auto;
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+}

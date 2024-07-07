@@ -1,0 +1,116 @@
+#include <stdio.h>
+#include <time.h> // Para utilizar a função clock()
+#include <stdlib.h> // Para utilizar as funções rand() e srand()
+
+// Realiza cópia dos elementos do vetor 'origem' para o vetor 'destino'
+void copyVetor(int *origem, int *destino, int n) {
+    int i;
+    for (i = 0; i < n; i++)
+        destino[i] = origem[i];
+} 
+
+// Exibe dados do vetor
+void printVetor(int *v, int n) {
+    int i;
+    for (i = 0; i < n; i++)
+        printf("%d ", v[i]);
+    printf("\n");
+} 
+
+// BubbleSort
+void bubbleSort(int *vetor, int N) {
+    int i, j, aux, troca = 1;
+    for (i = 0; (i < N - 1) && troca; i++) {
+        troca = 0;
+        for (j = 0; j < N - i - 1; j++) {
+            if (vetor[j] > vetor[j + 1]) {
+                aux = vetor[j];
+                vetor[j] = vetor[j + 1];
+                vetor[j + 1] = aux;
+                troca = 1;
+            }
+        }
+    }
+}
+
+// IsertSort
+void isertSort(int *vetor, int N) {
+    int i, j, aux;
+    for (i = 1; i < N; i++) {
+        aux = vetor[i];
+        for (j = i - 1; (j >= 0) && (aux < vetor[j]); j--) {
+            vetor[j + 1] = vetor[j];
+        }
+        vetor[j + 1] = aux;
+    }
+}
+
+// SelectSort
+void selectSort(int *vetor, int N) {
+    int menor, aux, i, j;
+    for (i = 0; i < N - 1; i++) {
+        menor = i;
+        for (j = i + 1; j < N; j++)
+            if (vetor[j] < vetor[menor])
+                menor = j;
+        if (menor != i) {
+            aux = vetor[i];
+            vetor[i] = vetor[menor];
+            vetor[menor] = aux;
+        }
+    }
+}
+
+// Função para calcular o tempo de execução de uma função de ordenação
+void calcularTempoExecucao(void (*funcaoOrdenacao)(int *, int), int *vetor, int N) {
+    clock_t inicio, fim;
+    double tempoDecorrido;
+    
+    inicio = clock(); // Marca o tempo de início
+    
+    // Chama a função de ordenação
+    funcaoOrdenacao(vetor, N);
+    
+    fim = clock(); // Marca o tempo de término
+    
+    tempoDecorrido = ((double)(fim - inicio)) / CLOCKS_PER_SEC; // Calcula o tempo decorrido em segundos
+    printf("Tempo de execucao: %f segundos\n", tempoDecorrido);
+}
+
+// Programa principal
+int main() {
+    int vetorOriginal[10000];
+    int vetorCopiaBubble[10000]; // Vetor cópia para o BubbleSort
+    int vetorCopiaIsert[10000]; // Vetor cópia para o IsertSort
+    int vetorCopiaSelect[10000]; // Vetor cópia para o SelectSort
+    
+    srand(time(NULL));
+    
+    // Preenche o vetor original com números aleatórios
+    for (int i = 0; i < 10000; i++) {
+        vetorOriginal[i] = rand() % 10000; // Gera um número aleatório entre 0 e 9999
+    }
+    
+    // Exibindo o vetor original
+    printf("Vetor original: ");
+    printVetor(vetorOriginal, 10000);
+    
+    // Copiando o vetor original para os vetores cópia
+    copyVetor(vetorOriginal, vetorCopiaBubble, 10000);
+    copyVetor(vetorOriginal, vetorCopiaIsert, 10000);
+    copyVetor(vetorOriginal, vetorCopiaSelect, 10000);
+    
+    // Calcula e imprime o tempo de execução do BubbleSort
+    printf("BubbleSort: ");
+    calcularTempoExecucao(bubbleSort, vetorCopiaBubble, 10000);
+    
+    // Calcula e imprime o tempo de execução do IsertSort
+    printf("IsertSort: ");
+    calcularTempoExecucao(isertSort, vetorCopiaIsert, 10000);
+    
+    // Calcula e imprime o tempo de execução do SelectSort
+    printf("SelectSort: ");
+    calcularTempoExecucao(selectSort, vetorCopiaSelect, 10000);
+    
+    return 0;
+}

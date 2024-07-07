@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.content{
+    
+    display: grid;
+    grid-template-areas: 
+        ". . . . ."
+        ". hero . form ."
+        ". hero . form ."
+        ". . . . ."
+    ;
+    gap:  8.5rem;
+}
+
+aside {
+    grid-area: hero;
+}
+
+aside h1{
+    font-size: 45px;
+    font-weight: 500;
+    line-height: 75px;
+}
+
+aside h1 span{
+    color: #8234c2;
+}
+
+main{
+    grid-area: form;
+    width: 420px;
+    height: 320px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    margin-top: 5%;
+}
+
+main h2{
+    padding-bottom: 20px;
+    max-width: 430px;
+    font-size: 45px;
+}
+
+#formulario {
+    padding: 10px;
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+    vertical-align: top; 
+}
+
+#formulario input[type="email"],
+#formulario input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#formulario button {
+    background-color: #8234c2;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#formulario button:hover {
+    background-color: #501680;
+    transform: scale(1.2);
+}

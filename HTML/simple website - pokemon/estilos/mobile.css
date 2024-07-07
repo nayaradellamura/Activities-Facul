@@ -1,0 +1,104 @@
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header #imgPokemon {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px; 
+}
+
+header #gifPikachu {
+    width: 50%;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav li {
+    margin: 10px 0;
+}
+
+nav a {
+    padding: 8px 12px; 
+}
+
+.titulo {
+    margin: 10% 0;
+}
+
+#SecaoPokemonsIniciais,
+#SecaoPokemonsIniciais2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#SecaoPokemonsIniciais .pokemon,
+#SecaoPokemonsIniciais2 .pokemon {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+    margin: auto;
+}
+
+.pokemon img {
+    width: 100%;
+    margin: auto;
+    padding: 10%;
+}
+
+.texto {
+    text-align: justify;
+}
+
+/* Estilos para o formulário */
+#formulario {
+    width: 100%; 
+}
+
+#formulario input,
+#formulario textarea {
+    width: 100%;
+}
+
+#formulario button {
+    width: 100%;
+}
+
+.curiosidade {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.curiosidade img {
+    width: 45%;
+    margin: auto;
+    padding: 10%;
+}
+
+.curiosidade p {
+    color: rgb(20, 20, 20);
+    text-align: justify;
+    margin: 0;
+}
+
+/* Estilos para as redes sociais */
+#redesSociais {
+    margin-bottom: 20px;
+}
+
+.rede {
+    margin: 0 10px;
+}
+
+.imgRedes {
+    width: 20px; 
+}
