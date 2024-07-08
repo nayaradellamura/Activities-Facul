@@ -1,18 +1,8 @@
-📁 Programação Orietada Objeto - Java
+📁 Programação para Web
 
-Esta pasta contém diversas atividades realizadas na disciplina de Programação Orietada Objeto.
+Esta pasta contém diversas atividades realizadas na disciplina de Programação para Web.
 
-Classes e Objetos:
-
-- Classe
-- Objeto
-- Encapsulamento
-- Construtor
-- Metodos
-- ArrayList
-- Herança
-- Polimorfismo:
-- Agregação
-- Composição
-- Interface
-- Sobrecarga
+- HTML
+- CSS
+- JavaScript
+- Framework Bootstrap
